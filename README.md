@@ -1,7 +1,7 @@
 # Degree53techtest
 tech test for degree53
 
-Completed test as best I could with the time available to me. I did not have time to spend ages on a UI or to impliment the favorites feature.
+Completed test as best I could with the time available to me (extremely busy @ work). I did not have time to spend ages on a UI or to impliment the favorites feature.
 
 I used Alamofire as a cocoapod for networking.
 
