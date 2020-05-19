@@ -9,17 +9,21 @@
 import Foundation
 import Alamofire
 
-public class GitHubService{
+
+public class GitHubSearchViewModel{
     
-    typealias CompletionHandler = (_ success: GithubSearch) -> Void
+    weak var dataSource : GenericDataSource<SearchItem>?
     
-    func searchRepository(searchTerm:String, CompletionHandler: @escaping CompletionHandler){
-        
-        var url = "https://api.github.com/search/repositories?q=\(searchTerm.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")"
+    init(dataSource : GenericDataSource<SearchItem>?) {
+           self.dataSource = dataSource
+       }
+
+    func searchRepository(searchTerm:String){
+        let url = "https://api.github.com/search/repositories?q=\(searchTerm.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")"
         print(url)
         Alamofire.request(url).responseGithubSearch { response in
              if let githubSearch = response.result.value {
-                CompletionHandler(githubSearch)
+                self.dataSource?.data.value = githubSearch.items
             }
         }
     }
