@@ -5,5 +5,4 @@ Completed test as best I could with the time available to me. I did not have tim
 
 I used Alamofire as a cocoapod for networking.
 
-I have used a webview to display the readme files as was required, it said not to use 3rd part applications so this was the best way I could think of
-without using a 3rd party markdown display engine.
+I have used a webview to display the readme files as was required, it said not to use 3rd party applications so this was the best way I could think of without using a 3rd party markdown display engine.
